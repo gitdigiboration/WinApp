@@ -83,7 +83,15 @@ jobs:
     #  with:
     #    name: MSIX Package
       #  path: ${{ env.Wap_Project_Directory }}\AppPackages
-   # - name: Setup JFrog CLI
-  # You may pin to the exact commit or the version.
-    - uses: jfrog/setup-jfrog-cli@v2
-    - run: jfrog --version
+    - name: Setup JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v1
+      env:
+          JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
+    - name: Run JFrog CLI
+      run: |
+          # Collect environment variables for the build
+          jfrog rt bce
+          # Collect VCS details from git and add them to the build
+          jfrog rt bag
+          # Publish build info
+          jfrog rt bp
