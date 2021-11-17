@@ -20,7 +20,7 @@ jobs:
 
     env:
       Solution_Name: PhApp.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: your-test-project-path                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Test_Project_Path: WinAppUnitTest\WinAppUnitTest.csproj               # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
@@ -46,9 +46,10 @@ jobs:
       
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test
+   # dotnet test ~/projects/test1/test1.csproj
+      run: dotnet test ~\WinAppUnitTest\WinAppUnitTest.csproj
     - name: Build the Solution
-      run: msbuild PhApp.sln
+      run: msbuild PhApp\PhApp.csproj
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
