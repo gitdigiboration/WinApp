@@ -46,7 +46,8 @@ jobs:
       
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test WinAppUnitTest\WinAppUnitTest.csproj
+   # dotnet test ~/projects/test1/test1.csproj
+      run: dotnet test ~\WinAppUnitTest\WinAppUnitTest.csproj
     - name: Build the Solution
       run: msbuild PhApp\PhApp.csproj
 
