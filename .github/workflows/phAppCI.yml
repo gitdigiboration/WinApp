@@ -45,8 +45,8 @@ jobs:
      # uses: nuget restore PhApp.sln
       
     # Execute all unit tests in the solution
-   # - name: Execute unit tests
-    #  run: dotnet test WinAppUnitTest\WinAppUnitTest.csproj
+    - name: Execute unit tests
+      run: dotnet test WinAppUnitTest\WinAppUnitTest.csproj
     - name: Build the Solution
       run: msbuild PhApp\PhApp.csproj
 
