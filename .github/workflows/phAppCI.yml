@@ -83,3 +83,7 @@ jobs:
     #  with:
     #    name: MSIX Package
       #  path: ${{ env.Wap_Project_Directory }}\AppPackages
+   # - name: Setup JFrog CLI
+  # You may pin to the exact commit or the version.
+    - uses: jfrog/setup-jfrog-cli@v2
+    - run: jfrog --version
