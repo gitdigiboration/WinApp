@@ -48,7 +48,7 @@ jobs:
    # - name: Execute unit tests
     #  run: dotnet test
     - name: Build the Solution
-      run: msbuild PhApp.csproj
+      run: msbuild PhApp\PhApp.csproj
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
