@@ -84,7 +84,7 @@ jobs:
     #    name: MSIX Package
       #  path: ${{ env.Wap_Project_Directory }}\AppPackages
     - name: Setup JFrog CLI
-      uses: jfrog/setup-jfrog-cli@v1
+      uses: ./
       env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.ARTIFACTORY_TOKEN }}
     - name: Run JFrog CLI
