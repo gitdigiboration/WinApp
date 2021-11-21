@@ -48,8 +48,8 @@ jobs:
   #  - name: Execute unit tests
    # dotnet test ~/projects/test1/test1.csproj
       #run: dotnet test ~\WinAppUnitTest\WinAppUnitTest.csproj
-    - name: Build the Solution
-      run: msbuild PhApp\PhApp.csproj
+  #  - name: Build the Solution
+   #   run: msbuild PhApp\PhApp.csproj
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
@@ -89,6 +89,7 @@ jobs:
           JF_ARTIFACTORY_SERVER: ${{ secrets.ARTIFACTORY_TOKEN }}
     - name: Run JFrog CLI
       run: |
+          msbuild PhApp\PhApp.csproj
           # Collect environment variables for the build
           jfrog rt bce
           # Collect VCS details from git and add them to the build
