@@ -92,9 +92,9 @@ jobs:
             # URL of Artifactory instance
             url: 'http://localhost:8082/ui/packages'
             # Type of authentication to use. Must be one of username, apikey or accesstoken. Defaults to apikey
-            credentials type: # default is apikey
+            credentials type: 'accesstoken'
             # Username for Artifactory. Must be supplied when credentials type is username
-            user: 'admin'
+            user: # optional
             # Password for Artifactory. Must be supplied when credentials type is username
             password: # optional
             # Artifactory API Key. Must be supplied when credentials type is apikey
