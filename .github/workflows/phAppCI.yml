@@ -85,7 +85,6 @@ jobs:
      # path: ${{ env.Wap_Project_Directory }}\AppPackages
     - name: Setup JFrog CLI
     - uses: jfrog/setup-jfrog-cli@v1
-     
       env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.ARTIFACTORY_TOKEN }}
     - name: Run JFrog CLI
