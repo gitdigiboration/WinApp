@@ -88,7 +88,7 @@ jobs:
       uses: advancedcsg-open/action-jfrog-cli@v1.2.0
       with:
             # URL of Artifactory instance
-            url: 'http://localhost:8082/ui/packages'
+            url: http://localhost:8082
             # Type of authentication to use. Must be one of username, apikey or accesstoken. Defaults to apikey
             credentials type: username
             # Username for Artifactory. Must be supplied when credentials type is username
