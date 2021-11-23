@@ -90,10 +90,10 @@ jobs:
             uses: advancedcsg-open/action-jfrog-cli@v1.2.0
             with:
             # URL of Artifactory instance
-            url: 'http://localhost:8082/ui/packages'
+            url: http://localhost:8082/ui/packages
             # Type of authentication to use. Must be one of username, apikey or accesstoken. Defaults to apikey
-            credentials type: 'accesstoken'
+            credentials type: accesstoken
             # Artifactory access token. Must be supplied when credentials type is accesstoken
-            access token: 'eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJfaXNIMmNHeWRvRjZIckpRcWdqdTF4ZFJZSFpGSUJtbnA0UkYtWFVHby1ZIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL2FkbWluIiwic2NwIjoiYXBwbGllZC1wZXJtaXNzaW9uc1wvYWRtaW4gYXBpOioiLCJhdWQiOiIqQCoiLCJpc3MiOiJqZmZlQDAwMCIsImlhdCI6MTYzNzY5ODA1MywianRpIjoiNTJhODVjYjQtYjQ5Ni00YTlhLWFlMTQtMDE5MTY1MWJjYWYxIn0.mAGQFFHRpxJy3VSTxauCnRtUxrVlejk1dLCODPcq2EWaFcW7Txn2QenudVo7cCTJLdPojSetHNFExOCzlZtuXQjEDnNTZ8SXPSyOCZcHssTOFQsHTSBvyVKzoZf4CwVt0ZTR_P5VNdDYEpMMELDDo9E4jMo1olYm9k-WNyOJuQZJL-zeDpi0sywauuSrlrW4Mk4tQ9LEfxxSZLYdHJvmQxW_oqtqNXz9iKCdiS0lidFEiL5hNbYvDv_b-FrGKq3hX7e3PpUZ7CXodZmRg6NXymhlOuGHELpCBRorRci4oZJNxFygj6rp3q2GJyj3ESo8-bemwSK32fn_MQ83CCUimg'
+            access token: eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJfaXNIMmNHeWRvRjZIckpRcWdqdTF4ZFJZSFpGSUJtbnA0UkYtWFVHby1ZIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL2FkbWluIiwic2NwIjoiYXBwbGllZC1wZXJtaXNzaW9uc1wvYWRtaW4gYXBpOioiLCJhdWQiOiIqQCoiLCJpc3MiOiJqZmZlQDAwMCIsImlhdCI6MTYzNzY5ODA1MywianRpIjoiNTJhODVjYjQtYjQ5Ni00YTlhLWFlMTQtMDE5MTY1MWJjYWYxIn0.mAGQFFHRpxJy3VSTxauCnRtUxrVlejk1dLCODPcq2EWaFcW7Txn2QenudVo7cCTJLdPojSetHNFExOCzlZtuXQjEDnNTZ8SXPSyOCZcHssTOFQsHTSBvyVKzoZf4CwVt0ZTR_P5VNdDYEpMMELDDo9E4jMo1olYm9k-WNyOJuQZJL-zeDpi0sywauuSrlrW4Mk4tQ9LEfxxSZLYdHJvmQxW_oqtqNXz9iKCdiS0lidFEiL5hNbYvDv_b-FrGKq3hX7e3PpUZ7CXodZmRg6NXymhlOuGHELpCBRorRci4oZJNxFygj6rp3q2GJyj3ESo8-bemwSK32fn_MQ83CCUimg
             # Specify a working directory for the command to run in.
            # working directory: # optional, default is .
