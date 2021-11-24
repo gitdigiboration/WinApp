@@ -83,8 +83,8 @@ jobs:
      # name: MSIX Package
      # path: ${{ env.Wap_Project_Directory }}\AppPackages
     - uses: jfrog/setup-jfrog-cli@v2
-      env:
-       JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
+      #env:
+       #JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
     - run: |
            # Ping the server
             jfrog rt ping
