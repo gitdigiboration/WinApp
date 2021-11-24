@@ -84,7 +84,7 @@ jobs:
      # path: ${{ env.Wap_Project_Directory }}\AppPackages
     - uses: jfrog/setup-jfrog-cli@v2
       env:
-        JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_TOKEN }}
+        JF_ARTIFACTORY_1: 'utiututututututuutu'
     - run: |
            # Ping the server
             jfrog rt ping
