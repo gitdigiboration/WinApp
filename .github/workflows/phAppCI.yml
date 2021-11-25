@@ -88,4 +88,5 @@ jobs:
     - run: |
            # Ping the server jfrog
             #jfrog rt ping --url=http://localhost:8082/artifactory
-            jfrog rt c --url=http://localhost:8082/artifactory --user=admin --password=password
+           # jfrog c add --url=http://localhost:8082/artifactory --user=admin --password=password
+            jfrog c add --artifactory-url=http://localhost:8082/artifactory --user=admin --password=password
