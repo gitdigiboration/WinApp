@@ -90,5 +90,5 @@ jobs:
             #jfrog rt ping --url=http://localhost:8082/artifactory
            # jfrog c add --url=http://localhost:8082/artifactory --user=admin --password=password
             jfrog c add --artifactory-url=http://13.232.200.6:8081/artifactory --user=admin --password=admin@123
-            #jfrog rt upload "b/*.zip" generic-local --build-name my-build 
-            jfrog rt u "build/*.zip" generic-local/zipFiles/
+            jfrog rt upload "b/*.zip" generic-local --build-name my-build 
+           # jfrog rt u "build/*.zip" generic-local/zipFiles/
