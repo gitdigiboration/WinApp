@@ -48,6 +48,7 @@ jobs:
       #run: dotnet test ~\WinAppUnitTest\WinAppUnitTest.csproj
     - name: Build the Solution
       run: msbuild PhApp\PhApp.csproj
+      working-directory: BuildProject
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
@@ -90,4 +91,5 @@ jobs:
            # jfrog c add --url=http://localhost:8082/artifactory --user=admin --password=password
             jfrog c add --artifactory-url=http://13.127.21.249:8081/artifactory --user=admin --password=admin@123
            # jfrog rt upload "b/*.zip" generic-local --build-name my-build 
-             jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
+            # jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
+            jfrog rt u "BuildProject/*.*" generic-local/
