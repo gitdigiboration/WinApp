@@ -19,8 +19,8 @@ jobs:
     env:
       Solution_Name: PhApp.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
      # Test_Project_Path: WinAppUnitTest\WinAppUnitTest.csproj               # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-    #  Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-     # Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Directory: PhApp\PhApp.csproj              # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: PhApp\PhApp.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
@@ -47,8 +47,8 @@ jobs:
    # dotnet test ~/projects/test1/test1.csproj
       #run: dotnet test ~\WinAppUnitTest\WinAppUnitTest.csproj
     - name: Build the Solution
-      run: msbuild PhApp\PhApp.csproj
-      working-directory: PhApp
+      run: msbuild $env:Wap_Project_Path
+    #  working-directory: PhApp
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     #- name: Restore the application
@@ -92,4 +92,4 @@ jobs:
             jfrog c add --artifactory-url=http://13.127.21.249:8081/artifactory --user=admin --password=admin@123
            # jfrog rt upload "b/*.zip" generic-local --build-name my-build 
             # jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
-            jfrog rt u "PhApp/*.*" generic-local/
+            jfrog rt u "$env:Wap_Project_Path/*.*" generic-local/
