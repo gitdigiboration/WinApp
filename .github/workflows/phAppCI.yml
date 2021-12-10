@@ -82,14 +82,14 @@ jobs:
    #   with:
      #    name: MSIX Package
      #    path: ${{ env.Wap_Project_Directory }}\AppPackages
-    - uses: jfrog/setup-jfrog-cli@v2
+   # - uses: jfrog/setup-jfrog-cli@v2
       #env:
        # JF_ARTIFACTORY_1: "eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJfaXNIMmNHeWRvRjZIckpRcWdqdTF4ZFJZSFpGSUJtbnA0UkYtWFVHby1ZIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL2FkbWluIiwic2NwIjoiYXBwbGllZC1wZXJtaXNzaW9uc1wvYWRtaW4gYXBpOioiLCJhdWQiOiIqQCoiLCJpc3MiOiJqZmZlQDAwMCIsImlhdCI6MTYzNzc3MzczMCwianRpIjoiZGNjNjNhNTQtZTE1NS00MTk0LWJiY2ItYTExM2IxMTdlNjRiIn0.d6Scne69lrf8Zbjj04ha7dZHpwWkBkZB4r8bvvSRP4tZLe66c1XobR4GVmlO04CVhJASz5QrHXKNAEhz3RMGBLmn5e00TQ-irYEuZBlYbSyflwuOlygrJyHKFf4MZXlXz8tWKzBWUvK51g_XxfnHYHoIkl-Z4UjWxY3SJYlCiCkH9vo6r3-wJ8frN84WWj-sXJ7IDbH1jnGn4U5cyJHCk7m03zDxMRjnbKBUDs5MG4rr77-dOpQlLh8LLztths3HaZC4O-6uy1PrDV1yrpxT_BEh_lvUsgATRHWR9WfYHaQyywaPqo5msSs_LWiDfMBTmM5KR7mz7JV1C71Gwemw8g"
-    - run: |
+   # - run: |
            # Ping the server jfrog
             #jfrog rt ping --url=http://localhost:8082/artifactory
            # jfrog c add --url=http://localhost:8082/artifactory --user=admin --password=password
-            jfrog c add --artifactory-url=http://13.127.21.249:8081/artifactory --user=admin --password=admin@123
+         #   jfrog c add --artifactory-url=http://13.127.21.249:8081/artifactory --user=admin --password=admin@123
            # jfrog rt upload "b/*.zip" generic-local --build-name my-build 
             # jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
-            jfrog rt u "$env:Project_Build_Directory/*.*" generic-local/
+          #  jfrog rt u "$env:Project_Build_Directory/*.*" generic-local/
