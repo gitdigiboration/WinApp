@@ -93,3 +93,10 @@ jobs:
            # jfrog rt upload "b/*.zip" generic-local --build-name my-build 
             # jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
           #  jfrog rt u "$env:Project_Build_Directory/*.*" generic-local/
+          
+    - name: SonarQube Quality Gate Check
+  # You may pin to the exact commit or the version.
+  # uses: SonarSource/sonarqube-quality-gate-action@15767f0e4eb489cfdd989dc717fa78c038d0de8a
+    - uses: SonarSource/sonarqube-quality-gate-action@v1.0.0
+    #  with:
+    # Location of the scanner metadata report file scanMetadataReportFile: # optional, default is .scannerwork/report-task.txt
