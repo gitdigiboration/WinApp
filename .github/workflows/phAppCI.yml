@@ -27,6 +27,34 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
+        
+    - name: Cache SonarQube packages
+      uses: actions/cache@v1
+      with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+    - name: Cache SonarQube scanner
+      id: cache-sonar-scanner
+      uses: actions/cache@v1
+      with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+    - name: Install SonarQube scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      shell: powershell
+      run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+    - name: Build and analyze
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+      shell: powershell
+      run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"example" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          dotnet build
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
     # Install the .NET Core workload
     #- name: Install .NET Core
     #  uses: actions/setup-dotnet@v1
@@ -94,9 +122,4 @@ jobs:
             # jfrog rt u "D:/a/WinApp/WinApp/PhApp/bin/Debug/*.*" generic-local/
           #  jfrog rt u "$env:Project_Build_Directory/*.*" generic-local/
           
-    - name: SonarQube Quality Gate Check
-  # You may pin to the exact commit or the version.
-  # uses: SonarSource/sonarqube-quality-gate-action@15767f0e4eb489cfdd989dc717fa78c038d0de8a
-    - uses: SonarSource/sonarqube-quality-gate-action@v1.0.0
-    #  with:
-    # Location of the scanner metadata report file scanMetadataReportFile: # optional, default is .scannerwork/report-task.txt
+     
