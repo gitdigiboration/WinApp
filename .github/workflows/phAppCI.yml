@@ -56,4 +56,4 @@ jobs:
      # - name: Build with dotnet
       #  run: dotnet build src/<solution>.sln --configuration Release
       - name: Unit Tests
-        run:  MsBuild.exe test $env:Test_Project_Path /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run:  dotnet test $env:Test_Project_Path /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
