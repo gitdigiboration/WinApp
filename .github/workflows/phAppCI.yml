@@ -14,7 +14,7 @@ jobs:
      # Test_Project_Path: WinAppUnitTest\WinAppUnitTest.csproj               # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Project_Build_Directory: PhApp\bin\             # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Project_Path: PhApp\PhApp.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
-
+      Test_Project_Path: WinAppUnitTest\WinAppUnitTest.csproj
     steps:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.0.2
@@ -53,3 +53,7 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"token_in_sonar" /o:"orgname" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           MsBuild.exe /t:Rebuild $env:Project_Path
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+     # - name: Build with dotnet
+      #  run: dotnet build src/<solution>.sln --configuration Release
+      - name: Unit Tests
+        run:  MsBuild.exe test $env:Test_Project_Path /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
