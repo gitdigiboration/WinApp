@@ -54,7 +54,7 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"token_in_sonar" /o:"orgname" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           MsBuild.exe /t:Rebuild $env:Project_Path
-          dotnet test $env:Test_Project_Path /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+          dotnet test $env:Test_Project_Path --settings coverlet.runsettings --logger:trx
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       # - name: Unit Tests
       #  run:  dotnet test $env:Test_Project_Path /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
