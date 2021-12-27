@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PhApp;
+using PhApp.Basic;
 using System;
 
-namespace WinAppUnitTest
+namespace PhApp.Tests
 {
     [TestClass]
-    public class BasicMathsTest
+    public class BasicMathsTests
     {
         [TestMethod]
         public void Test_AddMethod()

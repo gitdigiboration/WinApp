@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhApp
+namespace PhApp.Basic
 {
     public class BasicMaths
     {

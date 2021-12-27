@@ -1,7 +1,6 @@
 C:\Users\rg61426\source\repos\WinApp\PhApp\bin\Debug\PhApp.exe.config
 C:\Users\rg61426\source\repos\WinApp\PhApp\bin\Debug\PhApp.exe
 C:\Users\rg61426\source\repos\WinApp\PhApp\bin\Debug\PhApp.pdb
-C:\Users\rg61426\source\repos\WinApp\PhApp\obj\Debug\PhApp.csproj.AssemblyReference.cache
 C:\Users\rg61426\source\repos\WinApp\PhApp\obj\Debug\PhApp.Properties.Resources.resources
 C:\Users\rg61426\source\repos\WinApp\PhApp\obj\Debug\PhApp.csproj.GenerateResource.cache
 C:\Users\rg61426\source\repos\WinApp\PhApp\obj\Debug\PhApp.csproj.CoreCompileInputs.cache
