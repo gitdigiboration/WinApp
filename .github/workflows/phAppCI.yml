@@ -36,7 +36,7 @@ jobs:
         run: |
            MsBuild.exe /t:Rebuild $env:Project_Path
            
-           cd WinApp/WinAppUnitTest/
+           cd ./WinAppUnitTest/
            dotnet test --no-build --no-restore --verbosity normal -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
        
       - name: End Sonar scan
