@@ -35,7 +35,9 @@ jobs:
       - name: Build and run unit tests
         run: |
            MsBuild.exe /t:Rebuild $env:Project_Path
-           dotnet test $env:Test_Project_Path --no-build --no-restore --verbosity normal -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
+           cd -
+           cd WinAppUnitTest
+           dotnet test --no-build --no-restore --verbosity normal -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
        
       - name: End Sonar scan
         run: dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
