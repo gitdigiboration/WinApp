@@ -30,7 +30,7 @@ jobs:
         run: dotnet tool install --global dotnet-sonarscanner
 
       - name: Begin Sonar scan
-        run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="coverage.opencover.xml" /o:"orgname" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+        run: dotnet sonarscanner begin /k:"${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="WinAppUnitTest/coverage.opencover.xml" /o:"orgname" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
 
       - name: Build and run unit tests
         run: |
