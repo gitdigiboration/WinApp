@@ -28,6 +28,10 @@ namespace PhApp.Tests
             double res = bm.divide(10, 5);
             Assert.AreEqual(res, 2);
         }
-    
+       public double Multiply(double num1, double num2)
+        {
+            // To trace error while testing, writing + operator instead of * operator.  
+            return num1 * num2;
+        }
     }
 }
