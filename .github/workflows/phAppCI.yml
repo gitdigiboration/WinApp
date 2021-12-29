@@ -34,7 +34,7 @@ jobs:
 
       - name: Build and run unit tests
         run: |
-           MsBuild.exe /t:Rebuild $env:Project_Path
+           MsBuild.exe /t:Rebuild $env:Solution_Name
            
            cd ./WinAppUnitTest/
            dotnet test --no-build --no-restore --verbosity normal -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
