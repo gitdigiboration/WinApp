@@ -29,10 +29,11 @@ namespace PhApp.Tests
             Assert.AreEqual(res, 2);
         }
        [TestMethod]
-       public double Multiply(double num1, double num2)
+        public void Test_MultiplyMethod()
         {
-            // To trace error while testing, writing + operator instead of * operator.  
-            return num1 * num2;
+            BasicMaths bm = new BasicMaths();
+            double res = bm.Multiply(10, 10);
+            Assert.AreEqual(res, 100);
         }
     }
 }
